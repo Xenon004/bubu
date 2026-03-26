@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday! SEJAL MY BUBBUU 🎂</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink-deep: #e91e8c;
+        --pink-mid: #f472b6;
+        --pink-soft: #fce7f3;
+        --pink-pale: #fdf2f8;
+        --white: #ffffff;
+        --text-dark: #831843;
+        --text-mid: #9d174d;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        background: linear-gradient(
+          160deg,
+          #fff0f8 0%,
+          #ffe4f0 40%,
+          #ffd6ec 80%,
+          #fff 100%
+        );
+        min-height: 100vh;
+        overflow-x: hidden;
+        cursor:
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='24'%3E🐾%3C/text%3E%3C/svg%3E")
+            16 16,
+          auto;
+      }
+
+      /* ── CONFETTI BG ── */
+      .confetti-bg {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .confetti-bg span {
+        position: absolute;
+        font-size: clamp(10px, 2vw, 20px);
+        opacity: 0.18;
+        animation: drift linear infinite;
+      }
+
+      @keyframes drift {
+        0% {
+          transform: translateY(-60px) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.18;
+        }
+        90% {
+          opacity: 0.18;
+        }
+        100% {
+          transform: translateY(110vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+
+      /* ── HERO ── */
+      .hero {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        gap: 1rem;
+      }
+
+      /* BUNNY STICKER */
+      .bunny-wrap {
+        position: relative;
+        animation: bunny-float 3s ease-in-out infinite;
+      }
+      .bunny {
+        font-size: clamp(80px, 18vw, 140px);
+        display: block;
+        filter: drop-shadow(0 12px 32px rgba(233, 30, 140, 0.25));
+        transition: transform 0.2s;
+      }
+      .bunny:hover {
+        transform: scale(1.12) rotate(-6deg);
+      }
+
+      .bunny-sticker-badge {
+        position: absolute;
+        top: -18px;
+        right: -22px;
+        background: var(--pink-deep);
+        color: white;
+        font-family: "Nunito", sans-serif;
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 50px;
+        transform: rotate(12deg);
+        box-shadow: 0 2px 10px rgba(233, 30, 140, 0.4);
+        white-space: nowrap;
+      }
+
+      @keyframes bunny-float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-18px) rotate(2deg);
+        }
+      }
+
+      /* TITLE */
+      .hero-title {
+        font-family: "Pacifico", cursive;
+        font-size: clamp(2.8rem, 10vw, 6.5rem);
+        background: linear-gradient(
+          135deg,
+          #e91e8c 0%,
+          #f472b6 50%,
+          #fb7185 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.1;
+        filter: drop-shadow(0 4px 16px rgba(233, 30, 140, 0.18));
+        animation: title-pop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+      }
+
+      @keyframes title-pop {
+        0% {
+          opacity: 0;
+          transform: scale(0.5) rotate(-8deg);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      .hero-name {
+        font-family: "Pacifico", cursive;
+        font-size: clamp(2rem, 7vw, 4.5rem);
+        color: var(--pink-deep);
+        animation: title-pop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s both;
+      }
+
+      .hero-sub {
+        font-size: clamp(1rem, 3vw, 1.4rem);
+        color: var(--text-mid);
+        font-weight: 600;
+        letter-spacing: 2px;
+        opacity: 0;
+        animation: fade-up 0.7s ease 0.9s forwards;
+      }
+
+      .scroll-hint {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        opacity: 0;
+        animation: fade-up 0.7s ease 1.4s forwards;
+      }
+      .scroll-hint span {
+        font-size: 13px;
+        color: var(--pink-mid);
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .scroll-arrow {
+        width: 28px;
+        height: 28px;
+        border-right: 3px solid var(--pink-mid);
+        border-bottom: 3px solid var(--pink-mid);
+        transform: rotate(45deg);
+        animation: bounce-arrow 1.2s ease-in-out infinite;
+      }
+      @keyframes bounce-arrow {
+        0%,
+        100% {
+          transform: rotate(45deg) translateY(0);
+        }
+        50% {
+          transform: rotate(45deg) translateY(8px);
+        }
+      }
+
+      @keyframes fade-up {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── DIVIDER LINE ── */
+      .divider-section {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 2rem 2rem;
+        gap: 1.2rem;
+      }
+
+      .divider-line-wrap {
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+
+      .divider-line {
+        flex: 1;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--pink-mid),
+          var(--pink-deep),
+          var(--pink-mid),
+          transparent
+        );
+        border-radius: 99px;
+        transform: scaleX(0);
+        transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform-origin: left;
+      }
+      .divider-line.visible {
+        transform: scaleX(1);
+      }
+
+      .divider-emoji {
+        font-size: 2rem;
+        animation: spin-slow 4s linear infinite;
+        opacity: 0;
+        transition: opacity 0.6s 0.4s;
+      }
+      .divider-line.visible ~ .divider-emoji,
+      .divider-emoji.visible {
+        opacity: 1;
+      }
+
+      .divider-text {
+        font-family: "Pacifico", cursive;
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        color: var(--pink-deep);
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.7s 0.3s,
+          transform 0.7s 0.3s;
+      }
+      .divider-text.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes spin-slow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ── MESSAGE CARDS ── */
+      .cards-section {
+        position: relative;
+        z-index: 1;
+        padding: 3rem 1.5rem 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3.5rem;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .card {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 2px solid rgba(244, 114, 182, 0.3);
+        border-radius: 28px;
+        padding: clamp(2rem, 5vw, 3.5rem);
+        box-shadow:
+          0 8px 40px rgba(233, 30, 140, 0.1),
+          0 2px 8px rgba(233, 30, 140, 0.08);
+        opacity: 0;
+        transform: translateY(60px) scale(0.94);
+        transition:
+          opacity 0.7s,
+          transform 0.7s cubic-bezier(0.34, 1.4, 0.64, 1),
+          box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(252, 231, 243, 0.5) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      .card.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        box-shadow:
+          0 16px 60px rgba(233, 30, 140, 0.15),
+          0 4px 16px rgba(233, 30, 140, 0.1);
+      }
+
+      .card:nth-child(odd) {
+        transform: translateY(60px) scale(0.94) rotate(-1deg);
+      }
+      .card:nth-child(even) {
+        transform: translateY(60px) scale(0.94) rotate(1deg);
+      }
+      .card:nth-child(odd).visible {
+        transform: translateY(0) scale(1) rotate(-0.5deg);
+      }
+      .card:nth-child(even).visible {
+        transform: translateY(0) scale(1) rotate(0.5deg);
+      }
+
+      .card-icon {
+        font-size: 2.8rem;
+        display: block;
+        margin-bottom: 0.8rem;
+        animation: bounce-icon 2s ease-in-out infinite;
+      }
+      .card:nth-child(2) .card-icon {
+        animation-delay: 0.3s;
+      }
+      .card:nth-child(3) .card-icon {
+        animation-delay: 0.6s;
+      }
+      .card:nth-child(4) .card-icon {
+        animation-delay: 0.9s;
+      }
+
+      @keyframes bounce-icon {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15) rotate(8deg);
+        }
+      }
+
+      .card-title {
+        font-family: "Pacifico", cursive;
+        font-size: clamp(1.3rem, 4vw, 1.9rem);
+        color: var(--pink-deep);
+        margin-bottom: 0.9rem;
+      }
+
+      .card-body {
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        color: var(--text-mid);
+        line-height: 1.85;
+        font-weight: 600;
+      }
+
+      .card-tag {
+        display: inline-block;
+        margin-top: 1.2rem;
+        background: linear-gradient(135deg, var(--pink-deep), var(--pink-mid));
+        color: white;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 4px 14px;
+        border-radius: 50px;
+      }
+
+      /* ── FLOATING EMOJIS (scroll-triggered) ── */
+      .emoji-float {
+        position: fixed;
+        pointer-events: none;
+        font-size: clamp(20px, 4vw, 36px);
+        z-index: 999;
+        animation: emoji-rise 3s ease forwards;
+      }
+
+      @keyframes emoji-rise {
+        0% {
+          opacity: 0;
+          transform: translateY(0) scale(0.4) rotate(0deg);
+        }
+        15% {
+          opacity: 1;
+          transform: translateY(-30px) scale(1.1) rotate(-15deg);
+        }
+        80% {
+          opacity: 0.9;
+          transform: translateY(-200px) scale(1) rotate(20deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-320px) scale(0.6) rotate(-30deg);
+        }
+      }
+
+      /* ── FOOTER ── */
+      .footer {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 3rem 2rem 5rem;
+      }
+
+      .footer-bunny {
+        font-size: 3rem;
+        display: block;
+        animation: bunny-float 2.5s ease-in-out infinite;
+      }
+
+      .footer-msg {
+        font-family: "Pacifico", cursive;
+        font-size: clamp(1rem, 3.5vw, 1.6rem);
+        color: var(--pink-deep);
+        margin-top: 1rem;
+        opacity: 0;
+        transform: scale(0.8);
+        transition:
+          opacity 0.8s,
+          transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .footer-msg.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* ── SPARKLE TRAIL ── */
+      .sparkle {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        font-size: 18px;
+        animation: sparkle-pop 0.8s ease forwards;
+      }
+      @keyframes sparkle-pop {
+        0% {
+          opacity: 1;
+          transform: scale(0) rotate(0deg);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.4) rotate(180deg);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0) rotate(360deg) translateY(-30px);
+        }
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 600px) {
+        .cards-section {
+          gap: 2.5rem;
+        }
+        .card {
+          padding: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Confetti background -->
+    <div class="confetti-bg" id="confettiBg"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="bunny-wrap">
+        <span class="bunny">🐰</span>
+        <div class="bunny-sticker-badge">✨ Sticker ✨</div>
+      </div>
+      <h1 class="hero-title">Happy Birthday Sejal! my Bubbu</h1>
+      <h2 class="hero-name">🎂</h2>
+      <p class="hero-sub">
+        ✨ DUDU wishes you the most magical day and your future filled with love
+        ✨
+      </p>
+      <div class="scroll-hint">
+        <span>SCROLL FOR LOVE CUTU!</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider-section" id="divider">
+      <div class="divider-line-wrap">
+        <div class="divider-line" id="dividerLine"></div>
+        <span class="divider-emoji" id="dividerEmoji1">🎀</span>
+        <span class="divider-emoji" id="dividerEmoji2">🎂</span>
+        <span class="divider-emoji" id="dividerEmoji3">🎀</span>
+        <div
+          class="divider-line"
+          id="dividerLine2"
+          style="transform-origin: right"
+        ></div>
+      </div>
+      <div class="divider-text" id="dividerText">
+        A little message, just for my RASMALAI 💌
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <section class="cards-section">
+      <div class="card" data-card>
+        <span class="card-icon">🌸</span>
+        <h3 class="card-title">Your Presence is so special</h3>
+        <p class="card-body">
+          On this beautiful day, I just want you to let you know how beautiful
+          your soul and your heart is,whoever passes by you even once can never
+          forget.You are so special to me ,close to my heart,my emotional
+          oxygen.Your presence is always blessing and peaceful 💖
+        </p>
+        <span class="card-tag">With Love</span>
+      </div>
+
+      <div class="card" data-card>
+        <span class="card-icon">🎁</span>
+        <h3 class="card-title">Wishing You All the Joy</h3>
+        <p class="card-body">
+          I have seen your STRENGTH, your RESILIENCE,your TENACITY, you always
+          overcome each and every hardships which hurdels your path.I believe in
+          you girl and i wish to see you live your POTENTIAL , want to make you
+          realise you deserve even more and i firmly believe you shall achieve
+          all of it one day . 🌟
+        </p>
+        <span class="card-tag">Many Wishes</span>
+      </div>
+
+      <div class="card" data-card>
+        <span class="card-icon">🦋</span>
+        <h3 class="card-title">Dreams Come True</h3>
+        <p class="card-body">
+          KEEP DREAMING BIG ,I know one by one you shall achieve all of it . It
+          might take time bit by bit but you shall acheive all . It doesnt
+          matter what so -anxiety feeling,helpess feeling , suffocating
+          situation and what not but i have seen your strength your stories.YOU
+          babe really so strong that i look up to you and i feel proud whenever
+          i see how far you've come and it pushes me and motivates more ! ✨
+        </p>
+        <span class="card-tag">Dream Big</span>
+      </div>
+
+      <div class="card" data-card>
+        <span class="card-icon">💝</span>
+        <h3 class="card-title">Forever Grateful For You</h3>
+        <p class="card-body">
+          Thank you for being you babe — for your kindness, your laughter, and
+          your generous soul. I'm endlessly grateful our paths crossed, Happy
+          Birthday to someone who means the absolute world to me. Sending you a
+          million hugs and kisses to my lovee! 🤗🎂
+        </p>
+        <span class="card-tag">Always & Forever</span>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span class="footer-bunny">🐰</span>
+      <p class="footer-msg" id="footerMsg">
+        AGAIN WISH YOU VERY HAPPY BIRTHDAY "S"! 🎉🌸💕
+      </p>
+    </footer>
+
+    <script>
+      /* ── CONFETTI BG ── */
+      const emojis = [
+        "🌸",
+        "💖",
+        "✨",
+        "🎀",
+        "🌷",
+        "💕",
+        "⭐",
+        "🍭",
+        "🎊",
+        "💗",
+        "🌺",
+        "🦋",
+      ];
+      const bg = document.getElementById("confettiBg");
+      for (let i = 0; i < 28; i++) {
+        const s = document.createElement("span");
+        s.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.top = Math.random() * 100 + "vh";
+        s.style.animationDuration = 8 + Math.random() * 14 + "s";
+        s.style.animationDelay = -Math.random() * 15 + "s";
+        s.style.fontSize = 10 + Math.random() * 18 + "px";
+        bg.appendChild(s);
+      }
+
+      /* ── SPARKLE CURSOR TRAIL ── */
+      const sparkleEmojis = ["✨", "💖", "🌸", "⭐", "💕", "🎀"];
+      let lastSparkle = 0;
+      document.addEventListener("mousemove", (e) => {
+        const now = Date.now();
+        if (now - lastSparkle < 120) return;
+        lastSparkle = now;
+        const sp = document.createElement("span");
+        sp.className = "sparkle";
+        sp.textContent =
+          sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+        sp.style.left = e.clientX - 10 + "px";
+        sp.style.top = e.clientY - 10 + "px";
+        document.body.appendChild(sp);
+        setTimeout(() => sp.remove(), 800);
+      });
+
+      /* ── INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ── */
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.18 },
+      );
+
+      // Divider
+      observer.observe(document.getElementById("dividerLine"));
+      observer.observe(document.getElementById("dividerLine2"));
+      observer.observe(document.getElementById("dividerText"));
+
+      ["dividerEmoji1", "dividerEmoji2", "dividerEmoji3"].forEach((id) => {
+        const el = document.getElementById(id);
+        observer.observe(el);
+        new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) el.classList.add("visible");
+            });
+          },
+          { threshold: 0.3 },
+        ).observe(el);
+      });
+
+      // Cards
+      document
+        .querySelectorAll("[data-card]")
+        .forEach((card) => observer.observe(card));
+
+      // Footer
+      observer.observe(document.getElementById("footerMsg"));
+
+      /* ── FLOATING HEART EMOJIS ON SCROLL ── */
+      const heartEmojis = [
+        "💖",
+        "💗",
+        "💕",
+        "💝",
+        "💞",
+        "🌸",
+        "✨",
+        "🎀",
+        "💓",
+        "🌷",
+      ];
+      let lastEmoji = 0;
+      let lastScrollY = window.scrollY;
+      let emojiCount = 0;
+
+      window.addEventListener("scroll", () => {
+        const now = Date.now();
+        const scrollDiff = Math.abs(window.scrollY - lastScrollY);
+        lastScrollY = window.scrollY;
+
+        // Only spawn when actually scrolling, throttled
+        if (scrollDiff < 3 || now - lastEmoji < 280) return;
+        lastEmoji = now;
+
+        // Spawn 1-2 emojis per scroll tick
+        const count = Math.random() > 0.5 ? 2 : 1;
+        for (let i = 0; i < count; i++) {
+          setTimeout(() => spawnEmoji(), i * 120);
+        }
+      });
+
+      function spawnEmoji() {
+        const el = document.createElement("span");
+        el.className = "emoji-float";
+        el.textContent =
+          heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+
+        // Random horizontal position on screen edges or center areas
+        const zones = [
+          { min: 5, max: 25 },
+          { min: 35, max: 65 },
+          { min: 75, max: 95 },
+        ];
+        const zone = zones[Math.floor(Math.random() * zones.length)];
+        const x = zone.min + Math.random() * (zone.max - zone.min);
+        el.style.left = x + "vw";
+        el.style.bottom = 10 + Math.random() * 30 + "vh";
+        el.style.fontSize = 18 + Math.random() * 24 + "px";
+        el.style.animationDuration = 2.2 + Math.random() * 1.2 + "s";
+
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 3500);
+      }
+    </script>
+  </body>
+</html>
